@@ -19,4 +19,8 @@ public class ArticleController {
     rq.view("usr/article/list");
     System.out.println("showList view 메서드가 호출 되었습니다.");
   }
+
+  public void showWrite(Rq rq) {
+    rq.view("usr/article/write");
+  }
 }

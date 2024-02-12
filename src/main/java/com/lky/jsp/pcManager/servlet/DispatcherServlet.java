@@ -34,6 +34,9 @@ public class DispatcherServlet extends HttpServlet {
         articleController.showList(rq);
         System.out.println("jsp호출");
         break;
+      case "/usr/article/write/free":
+        articleController.showWrite(rq);
+        break;
       case "/usr/member/login":
         memberController.showLogin(rq);
         break;

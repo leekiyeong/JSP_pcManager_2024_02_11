@@ -1,5 +1,7 @@
-package com.lky.JSP_pcManager;
+package com.lky.jsp.pcManager;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -52,6 +54,24 @@ public class Rq {
       resp.getWriter().append(str);
     } catch (IOException e) {
       throw  new RuntimeException(e);
+    }
+  }
+
+  public void setAttr(String name, Object value) {
+
+    req.setAttribute(name, value);
+  }
+
+  public void view(String path) {
+    //서블릿에서 JSP에 작업을 토스
+    RequestDispatcher requestDispatcher = req.getRequestDispatcher("/jsp/" + path + ".jsp");
+    System.out.println("Rq에서 경로 요청 완료");
+    try {
+      requestDispatcher.forward(req, resp);
+    } catch (ServletException e) {
+      throw new RuntimeException(e);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

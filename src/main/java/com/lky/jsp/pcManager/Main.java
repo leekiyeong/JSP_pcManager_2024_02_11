@@ -1,4 +1,4 @@
-package com.lky.JSP_pcManager;
+package com.lky.jsp.pcManager;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

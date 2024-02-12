@@ -1,8 +1,8 @@
-package com.lky.JSP_pcManager.servlet;
+package com.lky.jsp.pcManager.servlet;
 
-import com.lky.JSP_pcManager.Rq;
-import com.lky.JSP_pcManager.article.ArticleController;
-import com.lky.JSP_pcManager.member.MemberController;
+import com.lky.jsp.pcManager.Rq;
+import com.lky.jsp.pcManager.article.ArticleController;
+import com.lky.jsp.pcManager.member.MemberController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,16 +27,16 @@ public class DispatcherServlet extends HttpServlet {
     //http://localhost:8080/usr/article/list/free?page=1
     // /usr/article/list/free 부분만 가져온다
     String url = req.getRequestURI();
-
     switch (url){
       case "/usr/article/list/free":
+        System.out.println(url);
+        System.out.println("showList 컨트롤러 요청");
         articleController.showList(rq);
+        System.out.println("jsp호출");
         break;
       case "/usr/member/login":
         memberController.showLogin(rq);
         break;
-
     }
-
   }
 }

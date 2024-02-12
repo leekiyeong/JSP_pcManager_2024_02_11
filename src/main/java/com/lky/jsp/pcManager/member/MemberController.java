@@ -1,6 +1,6 @@
-package com.lky.JSP_pcManager.member;
+package com.lky.jsp.pcManager.member;
 
-import com.lky.JSP_pcManager.Rq;
+import com.lky.jsp.pcManager.Rq;
 
 public class MemberController {
   public void showLogin(Rq rq) {

@@ -2,6 +2,7 @@ package com.lky.jsp.pcManager.servlet;
 
 import com.lky.jsp.pcManager.Rq;
 import com.lky.jsp.pcManager.article.ArticleController;
+import com.lky.jsp.pcManager.main.MainController;
 import com.lky.jsp.pcManager.member.MemberController;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,6 +23,7 @@ public class DispatcherServlet extends HttpServlet {
 
     MemberController memberController = new MemberController();
     ArticleController articleController = new ArticleController();
+    MainController mainController = new MainController();
 
     //getRequestURI ->
     //http://localhost:8080/usr/article/list/free?page=1
@@ -40,6 +42,11 @@ public class DispatcherServlet extends HttpServlet {
       case "/usr/member/login":
         memberController.showLogin(rq);
         break;
+      case "/usr/main/home":
+        mainController.showMain(rq);
+        break;
+
     }
   }
 }
+

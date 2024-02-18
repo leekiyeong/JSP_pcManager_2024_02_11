@@ -82,4 +82,13 @@ public class Rq {
   public String getMethod() {
     return req.getMethod();
   }
+
+  public String getActionPath() {
+    String[] bits = req.getRequestURI().split("/");
+    System.out.println(bits[0]);
+    System.out.println(bits[1]);
+    System.out.println(bits[2]);
+    System.out.println(bits[3]);
+    return "/%s/%s/%s".formatted(bits[1], bits[2], bits[3]);
+  }
 }

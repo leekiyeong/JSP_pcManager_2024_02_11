@@ -33,7 +33,7 @@ public class ArticleController {
   }
 
   public void showDetail(Rq rq) {
-    long id = 1;
+    long id = rq.getLongPathValueByIndex(1, 0);
     ArticleDto articleDto = articleService.fineById(id);
 
     rq.setAttr("article",articleDto);

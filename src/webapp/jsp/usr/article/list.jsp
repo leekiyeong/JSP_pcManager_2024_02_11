@@ -23,14 +23,14 @@ List<ArticleDto> articles = (List<ArticleDto>)request.getAttribute("articles");
         <!-- li가 flex 컨테이너가 된다-->
         <!-- li 자식속성은 flex-item이 된다-->
         <li class="flex">
-          <a class="w-[40px] text-center hover:underline hover:text-[red]" href="/usr/article/detail/<%=article.getId()%>">
+          <a class="w-[40px] text-center hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>">
             <%=article.getId()%>
           </a>
           <!--flex-row : 성장성, 1, 우측 끝으로-->
-          <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/<%=article.getId()%>">
+          <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>">
             <%=article.getTitle()%>
           </a>
-          <a class="w-[100px] text-center hover:underline hover:text-[red]" href="/usr/article/delete/<%=article.getId()%>">
+          <a class="w-[100px] text-center hover:underline hover:text-[red]" href="/usr/article/delete/free/<%=article.getId()%>">
             삭제
           </a>
         </li>

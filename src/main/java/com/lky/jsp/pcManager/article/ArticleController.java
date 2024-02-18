@@ -31,4 +31,12 @@ public class ArticleController {
 
     rq.appendBody("<div>%d번 게시물이 생성되었습니다.</div>".formatted(id));
   }
+
+  public void showDetail(Rq rq) {
+    long id = 1;
+    ArticleDto articleDto = articleService.fineById(id);
+
+    rq.setAttr("article",articleDto);
+    rq.view("usr/article/detail");
+  }
 }

@@ -33,9 +33,10 @@ public class DispatcherServlet extends HttpServlet {
       case "GET":
         switch (rq.getActionPath()) {
           case "/usr/article/list":
-            System.out.println("showList 컨트롤러 요청");
             articleController.showList(rq);
-            System.out.println("jsp호출");
+            break;
+          case "/usr/article/detail":
+            articleController.showDetail(rq);
             break;
           case "/usr/article/write":
             articleController.showWrite(rq);

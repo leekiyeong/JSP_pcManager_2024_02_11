@@ -28,25 +28,38 @@ public class DispatcherServlet extends HttpServlet {
     //getRequestURI ->
     //http://localhost:8080/usr/article/list/free?page=1
     // /usr/article/list/free 부분만 가져온다
-    String url = req.getRequestURI();
-    switch (url){
-      case "/usr/article/list/free":
-        System.out.println(url);
-        System.out.println("showList 컨트롤러 요청");
-        articleController.showList(rq);
-        System.out.println("jsp호출");
-        break;
-      case "/usr/article/write/free":
-        articleController.showWrite(rq);
-        break;
-      case "/usr/member/login":
-        memberController.showLogin(rq);
-        break;
-      case "/usr/main/home":
-        mainController.showMain(rq);
-        break;
 
+    switch (rq.getMethod()){
+      case "GET":
+        switch (rq.getPath()) {
+          case "/usr/article/list/free":
+            System.out.println("showList 컨트롤러 요청");
+            articleController.showList(rq);
+            System.out.println("jsp호출");
+            break;
+          case "/usr/article/write/free":
+            articleController.showWrite(rq);
+            break;
+          case "/usr/member/login":
+            memberController.showLogin(rq);
+            break;
+          case "/usr/main/home":
+            mainController.showMain(rq);
+            break;
+        }
+        break;
+      case "POST":
+        switch (rq.getPath()){
+          case "/usr/article/write/free":
+            articleController.doWrite(rq);
+            break;
+        }
+        break;
     }
+  }
+  @Override
+  protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    doGet(req, resp);
   }
 }
 

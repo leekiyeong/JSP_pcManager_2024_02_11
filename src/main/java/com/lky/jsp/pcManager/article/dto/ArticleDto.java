@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class ArticleDto {
-  private int id;
+  private long id;
   private String title;
   private String body;
 }
